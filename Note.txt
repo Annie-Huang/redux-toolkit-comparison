@@ -12,3 +12,5 @@ PS C:\react> npx create-react-app redux-toolkit-comparison --template redux-type
 PS C:\react\redux-toolkit-comparison> npm install prettier
 PS C:\react\redux-toolkit-comparison> npm install eslint-config-prettier
 PS C:\react\redux-toolkit-comparison> npm install eslint-plugin-prettier
+PS C:\react\redux-toolkit-comparison> npm install uuid
+PS C:\react\redux-toolkit-comparison> npm install @types/uuid
