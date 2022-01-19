@@ -14,3 +14,14 @@ PS C:\react\redux-toolkit-comparison> npm install eslint-config-prettier
 PS C:\react\redux-toolkit-comparison> npm install eslint-plugin-prettier
 PS C:\react\redux-toolkit-comparison> npm install uuid
 PS C:\react\redux-toolkit-comparison> npm install @types/uuid
+
+PS C:\react\redux-toolkit-comparison> npm i redux-devtools-extension redux-logger @types/redux-logger
+
+The old redux setup need to install
+- redux
+- react-redux
+- redux-devtools-extension
+- redux-thunk
+- redux-logger
+- @types/react-redux
+- @types/redux-logger
