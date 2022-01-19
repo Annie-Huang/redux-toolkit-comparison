@@ -25,3 +25,9 @@ The old redux setup need to install
 - redux-logger
 - @types/react-redux
 - @types/redux-logger
+
+1. Create Action Type Constants
+2. Create Action Creators and types for our Actions
+3. Create our three Reducers
+4. Combine our Reducers
+5. Configure our Store
