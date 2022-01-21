@@ -90,6 +90,13 @@ const App = function () {
 
   const handleToggle = (): void => {
     if (!selectedTodoId || !selectedTodo) return;
+
+    dispatch(
+      toggleTodoActionCreator({
+        id: selectedTodoId,
+        isComplete: !selectedTodo.isComplete,
+      })
+    );
   };
 
   const handleDelete = (): void => {
