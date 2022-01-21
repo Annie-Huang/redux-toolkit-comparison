@@ -67,12 +67,23 @@ const App = function () {
 
   const handleUpdate = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+
+    if (!editTodoInput.length || !selectedTodoId) {
+      handleCancelUpdate();
+      return;
+    }
+
+    dispatch(
+      editTodoActionCreator({ id: selectedTodoId, desc: editTodoInput })
+    );
+    setIsEditMode(false);
+    setEditTodoInput('');
   };
 
   const handleCancelUpdate = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e?: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
-    e.preventDefault();
+    e?.preventDefault();
     setIsEditMode(false);
     setEditTodoInput('');
   };
