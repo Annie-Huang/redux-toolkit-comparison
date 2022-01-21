@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v1 as uuid } from 'uuid';
 
 import { Todo } from './type';
@@ -20,3 +20,18 @@ const todosInitialState: Todo[] = [
     isComplete: false,
   },
 ];
+
+const todosSlice = createSlice({
+  name: 'todos',
+  initialState: todosInitialState,
+  reducers: {
+    edit: (state, { payload }: PayloadAction<{ id: string; desc: string }>) => {
+      const todoToEdit = state.find((todo) => todo.id === payload.id);
+
+      // !!!!Important. You can mutate your state with redux-toolkit
+      if (todoToEdit) {
+        todoToEdit.desc = payload.desc;
+      }
+    },
+  },
+});
