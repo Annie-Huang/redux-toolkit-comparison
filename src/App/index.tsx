@@ -6,8 +6,15 @@ import React, {
   useState,
 } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { State, Todo } from '../type';
 
+import {
+  createTodoActionCreator,
+  editTodoActionCreator,
+  toggleTodoActionCreator,
+  deleteTodoActionCreator,
+  selectTodoActionCreator,
+} from '../redux-og';
+import { State, Todo } from '../type';
 import './App.css';
 
 const App = function () {
@@ -35,6 +42,10 @@ const App = function () {
 
   const handleCreateNewTodo = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    if (!newTodoInput.length) return;
+
+    dispatch(createTodoActionCreator({ desc: newTodoInput }));
+    setNewTodoInput('');
   };
 
   const handleSelectTodo = (todoId: string) => (): void => {};
