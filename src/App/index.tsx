@@ -14,7 +14,7 @@ import {
   deleteTodoActionCreator,
   selectTodoActionCreator,
 } from '../redux-og';
-import { State, Todo } from '../type';
+import { State } from '../type';
 import './App.css';
 
 const App = function () {
@@ -101,6 +101,8 @@ const App = function () {
 
   const handleDelete = (): void => {
     if (!selectedTodoId) return;
+
+    dispatch(deleteTodoActionCreator({ id: selectedTodoId }));
   };
 
   return (
