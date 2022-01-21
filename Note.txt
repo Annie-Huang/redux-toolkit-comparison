@@ -6,6 +6,8 @@ https://github.com/angle943/redux-toolkit-comparison/tree/finished-version
 
 https://github.com/Annie-Huang/redux-toolkit-comparison
 
+redux           -> master branch
+redux-toolkit   -> redux-toolkit branch
 ====================================================================================
 PS C:\react> npx create-react-app redux-toolkit-comparison --template redux-typescript --use-npm
 
