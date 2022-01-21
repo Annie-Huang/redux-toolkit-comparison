@@ -48,7 +48,9 @@ const App = function () {
     setNewTodoInput('');
   };
 
-  const handleSelectTodo = (todoId: string) => (): void => {};
+  const handleSelectTodo = (todoId: string) => (): void => {
+    dispatch(selectTodoActionCreator({ id: todoId }));
+  };
 
   const handleEdit = (): void => {
     if (!selectedTodo) return;
