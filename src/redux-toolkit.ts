@@ -108,3 +108,5 @@ const reducer = {
   selectedTodo: selectedTodoSlice.reducer,
   counter: counterSlice.reducer,
 };
+
+export default configureStore({ reducer });
