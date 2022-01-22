@@ -102,6 +102,11 @@ const counterSlice = createSlice({
   initialState: 0,
   reducers: {},
   extraReducers: {
+    // keep in mind this is not the same as:
+    // [todosSlice.actions.create.type]: (state) => (state + 1),
+    // The following is the same as
+    // [todosSlice.actions.create.type]: (state) => {state + 1},
+    // If you change it as a return value, it will not work because we cannot apply the 'mutate' logic to a state that is primitive.
     [todosSlice.actions.create.type]: (state) => state + 1,
     [todosSlice.actions.edit.type]: (state) => state + 1,
     [todosSlice.actions.toggle.type]: (state) => state + 1,
@@ -239,4 +244,24 @@ const todosReducer = createReducer([] as Todo[], (builder) => {
     // to remove the `return` statement.
     return [...state.slice(0, index), todo, ...state.slice(index + 1)];
   });
+});*/
+
+/*// Direct State Mutation -> Potential Pitfall of using Immer
+// https://redux-toolkit.js.org/api/createSlice
+// Don't try to apply the 'mutate' logic to a state that is primitive value,
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state) => {
+      state.value++;
+    },
+    // if you do decrement: state => {return state--}, it will failed
+    decrement: (state) => {
+      state.value--;
+    },
+    incrementByAmount: (state, action: PayloadAction<number>) => {
+      state.value += action.payload;
+    },
+  },
 });*/
