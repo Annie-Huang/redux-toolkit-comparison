@@ -73,3 +73,19 @@ const todosSlice = createSlice({
     },
   },
 });
+
+// Good example to show primitive mutation.
+const selectedTodoSlice = createSlice({
+  name: 'selectedTodo',
+  // This is how to cast the primitive value to different type.
+  initialState: null as string | null,
+  reducers: {
+    // // If your state is a primitive value, you cannot do it this way:
+    // select: (state, { payload }: PayloadAction<{ id: string | null }>) => {
+    //   state = payload.id;
+    // },
+    // The correct way of doing it is:
+    select: (state, { payload }: PayloadAction<{ id: string | null }>) =>
+      payload.id,
+  },
+});
