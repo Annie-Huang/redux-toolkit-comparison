@@ -43,5 +43,14 @@ const todosSlice = createSlice({
         todoToToggle.isComplete = payload.isComplete;
       }
     },
+    // Cannot use delete as delete a special keyword in javascript.
+    remove: (state, { payload }: PayloadAction<{ id: string }>) => {
+      const index = state.findIndex((todo) => todo.id === payload.id);
+
+      if (index !== -1) {
+        // splice is mutate the original array
+        state.splice(index, 1);
+      }
+    },
   },
 });
