@@ -6,6 +6,8 @@ https://github.com/angle943/redux-toolkit-comparison/tree/finished-version
 
 https://github.com/Annie-Huang/redux-toolkit-comparison
 
+https://redux-toolkit.js.org/api/configureStore#full-example
+
 redux           -> master branch
 redux-toolkit   -> redux-toolkit branch
 ====================================================================================

@@ -129,4 +129,5 @@ const middleware = [...getDefaultMiddleware(), logger];
 export default configureStore({
   reducer,
   middleware,
+  devTools: process.env.NODE_ENV !== 'production',
 });
