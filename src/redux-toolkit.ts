@@ -131,3 +131,35 @@ export default configureStore({
   middleware,
   devTools: process.env.NODE_ENV !== 'production',
 });
+
+/*// If you only have single reducer in your app, you can do it like this:
+export default configureStore({ reducer: todoSlice.reducer });*/
+
+/*// If no middleware key provided, applies getDefaultMiddleware()
+// If wanting to remove default middleware, provide empty [];
+export default configureStore({ reducer: todoSlice.reducer, middleware: [] });*/
+
+/*// Most apps extend the functionality of their Redux store by adding middleware or store enhancers
+// (note: middleware is common, enhancers are less common).
+// Middleware adds extra functionality to Redux 'dispatch' function; enhancers add extra functionality to the Redux store.
+import { reduxBatch } from '@manaflair/redux-batch'
+const preloadedState = {
+  todos: [
+    {
+      text: 'Eat food',
+      completed: true,
+    },
+    {
+      text: 'Exercise',
+      completed: false,
+    },
+  ],
+  visibilityFilter: 'SHOW_COMPLETED',
+}
+const store = configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  devTools: process.env.NODE_ENV !== 'production',
+  preloadedState,
+  enhancers: [reduxBatch],
+})*/
