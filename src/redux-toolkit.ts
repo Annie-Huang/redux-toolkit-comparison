@@ -219,3 +219,24 @@ const counter = createSlice({
     },
   },
 });*/
+
+/*// Direct State Mutation -> Potential Pitfall of using Immer
+// https://redux-toolkit.js.org/api/createReducer#direct-state-mutation
+// Writing "mutating" reducers simplifies the code. It's shorter, there's less indirection, and it eliminates common mistakes made while spreading nested state.
+// However, the use of Immer does add some "magic", and Immer has its own nuances in behavior.
+// You should read through pitfalls mentioned in the immer docs .
+// Most importantly, you need to ensure that you either mutate the state argument or return a new state, but not both.
+const todosReducer = createReducer([] as Todo[], (builder) => {
+  builder.addCase(toggleTodo, (state, action) => {
+    const index = action.payload;
+    const todo = state[index];
+
+    // This case reducer both mutates the passed-in state...
+    todo.completed = !todo.completed;
+
+    // ... and returns a new value. This will throw an
+    // exception. In this example, the easiest fix is
+    // to remove the `return` statement.
+    return [...state.slice(0, index), todo, ...state.slice(index + 1)];
+  });
+});*/
