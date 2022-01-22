@@ -33,5 +33,15 @@ const todosSlice = createSlice({
         todoToEdit.desc = payload.desc;
       }
     },
+    toggle: (
+      state,
+      { payload }: PayloadAction<{ id: string; isComplete: boolean }>
+    ) => {
+      const todoToToggle = state.find((todo) => todo.id === payload.id);
+
+      if (todoToToggle) {
+        todoToToggle.isComplete = payload.isComplete;
+      }
+    },
   },
 });
