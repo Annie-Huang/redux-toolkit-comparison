@@ -163,3 +163,16 @@ const store = configureStore({
   preloadedState,
   enhancers: [reduxBatch],
 })*/
+
+/*
+// You can customizing the included middleware as well:
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: {
+        extraArgument: myCustomApiService,
+      },
+      serializableCheck: false,
+    }),
+})*/
