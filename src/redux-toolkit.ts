@@ -254,14 +254,14 @@ const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      state.value++;
+      state++;
     },
     // if you do decrement: state => {return state--}, it will failed
     decrement: (state) => {
-      state.value--;
+      state--;
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+      state += action.payload;
     },
   },
 });*/
