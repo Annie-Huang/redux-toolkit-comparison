@@ -176,3 +176,21 @@ const store = configureStore({
       serializableCheck: false,
     }),
 })*/
+
+/*
+// createSlice: A function that accepts an initial state, an object of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state.
+function createSlice({
+  // A name, used in action types
+  name: string,
+  // The initial state for the reducer
+  initialState: any,
+  // An object of "case reducers". Key names will be used to generate actions.
+  reducers: Object<string, ReducerFunction | ReducerAndPrepareObject>
+  // A "builder callback" function used to add more reducers, or
+  // an additional object of "case reducers", where the keys should be other
+  // action types
+  extraReducers?:
+  | Object<string, ReducerFunction>
+  | ((builder: ActionReducerMapBuilder<State>) => void)
+})
+*/
